@@ -1,0 +1,23 @@
+<div class="row">
+  <aside class="col-3">
+    <ul class="people_list">
+  {{#each artists}}
+    <li><a href="/artist/{{this.id}}">{{this.fullname}}</a></li>
+  {{/each}}
+</ul>
+  </aside>
+
+  <main class="col-9">
+  <p>this is the catalog page</p>
+  <ul class="people_list">
+    {{#each artists}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</main>
+</div>
+
+
+
+
+

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    
+        <aside class="col-3">
+          <ul class="people_list">
+            {{#each artists}}
+              <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
+            {{/each}}
+          </ul>
+        </aside>
+
+        <main class="col-9">
+          <div class="row-x">
+            <a href="/artists/new">
+              <div>
+               <p>Add new artist</p>
+              </div>
+            </a>
+
+            {{#each artists}}
+              <a href="/artists/{{this.id}}">
+                <div class="display-box">
+                   <img class="artist" src="/img/{{this.foto}}">
+                   <h4>{{this.fullname}}</h4>
+                   {{!-- <p>{{this.about}}</p> --}}
+                </div>
+              </a>
+            {{/each}}
+          </div> 
+          {{!--  <ul class="people_list">
+            {{#each artists}}
+              <li>{{this}}</li>
+            {{/each}}
+            </ul> --}}
+          {{!-- <img src="/img/08c4b4858ee2fa0bf13cb8bad435d056" /> --}}
+        </main>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

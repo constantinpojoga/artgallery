@@ -1,8 +1,8 @@
 {
-  "name": "express-reference",
+  "name": "artgallery",
   "version": "1.0.0",
-  "description": "A reference for building Express apps from scratch",
-  "main": "index.js",
+  "description": "A virtual gallery of the most famost artists of all time",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ga-chicago/express-reference.git"
   },
-  "author": "Bill Patrianakos",
+  "author": "Constantin Pojoga <pojogac@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ga-chicago/express-reference/issues"
@@ -21,7 +21,9 @@
     "body-parser": "^1.15.2",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
-    "mongoose": "^4.5.3"
+    "express-session": "^1.14.0",
+    "mongoose": "^4.5.3",
+    "multer": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

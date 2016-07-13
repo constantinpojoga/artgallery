@@ -14,6 +14,7 @@ RegisterController.route('/?')
   // Render the register page
   .get(function(req, res, next) {
     res.render('register', {
+      message: "Register"
       // csrfToken: req.csrf()
     });
     console.log(req.body);
@@ -35,10 +36,10 @@ RegisterController.route('/?')
       }, function(err, user) {
         if (err) {
           console.log(err);
-          res.render('home', {error: err});
+          res.render('register', {message: "Could not register" + err});
         } else {
-          res.render('req.body.fullname');
-          console.log(req.body)
+          res.render('register', {message: 'Succes'});
+          console.log(user)
         }
       });
     });

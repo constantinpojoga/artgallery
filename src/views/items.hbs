@@ -1,0 +1,27 @@
+
+<main>
+  <a href="/items/new">Create new item</a>
+ 
+  <ul class="items_list">
+    {{#each items}}
+      <div class="item-box yoxview">
+        <strong>{{this.artist}}</strong>
+        <img src="/img/{{this.foto}}">
+        {{this.title}}
+      </div>
+    {{/each}}
+  </ul>
+</main>
+
+
+
+
+{{!--  <p>{{this.title}}</p>
+      <p>{{this.id}}</p>
+      <p><strong>Artist: </strong>{{this.artist}}</p>
+      <p><strong>Location: </strong>{{this.location}}</p>
+      <p><strong>Created: </strong>{{this.created}}</p>
+      <p><strong>Subject: </strong>{{this.subject}}</p>
+      <p><strong>Periods: </strong>{{this.periods}}</p>
+      <img src="/img/{{this.foto}}"> --}}
+

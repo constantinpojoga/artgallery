@@ -1,10 +1,23 @@
-<h1>Register</h1>
-<form method="post" action="/register">
-   <input type="text" name="fullname" placeholder="Full name" />
-  <br />
-  <input type="text" name="username" placeholder="Username" />
-  <br />
-  <input type="password" name="password" placeholder="Password" />
-  <br />
-  <button>Log in</button>
-</form>
+<main class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Sign up</h2>
+      <p class="red">{{message}}</p>
+      <form method="post" action="/register">
+        <label class="form-block">
+        <input type="text" name="username" placeholder="Pick a username" />
+        </label><br />
+        <label class="form-block">
+        <input type="password" name="password" placeholder="Choose a password" />
+        </label><br />
+        <label class="form-block">
+        <input type="password" name="password_confirmation" placeholder="Confirm your password" />
+        </label><br />
+        <button>Sign up</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+

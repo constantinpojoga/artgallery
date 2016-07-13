@@ -14,7 +14,7 @@ LoginController.route('/?')
   // Render the login page
   .get(function(req, res, next) {
     res.render('login', {
-      // csrfToken: req.csrf()
+      message: "Enter your username and password"
     });
   })
   // POST /
@@ -32,7 +32,9 @@ LoginController.route('/?')
             res.send('User logged in');
             console.log(req.body)
           } else {
-            res.send('Wrong username or password!')
+            res.render('login', {
+              message: "Wrong username and password"
+            });
           }
         })
       }

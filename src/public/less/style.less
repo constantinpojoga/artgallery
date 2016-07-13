@@ -1,35 +1,90 @@
 /**
  * Main Stylesheet
- *
- * Do not code any styles within this file.
- *
- * USAGE:
- * Import all styles into this file. Start with
- * baseline styles at the top, site styles in the
- * middle, then mobile styles at the end.
  */
 
 ::selection { background: @orange; color: @white; }
 ::moz-selection { background: @orange; color: @white; }
 
-// Baseline styles
-// ===============
-// Normalize.css is pulled in at
-// build time using a copy from Bower
 @import 'modules/colors';     // Global color scheme
 @import 'modules/mixins';     // Mixins
 //@import 'modules/grid';       // Baseline grid
 @import 'modules/flex-grid';  // Flexbox grid
 @import 'modules/type';       // Typography
-
-// Partials
-// ========
-// Import site modules and page-specific
-// overrides here.
-
-// Mobile styles
-// =============
-// Media queries and mobile overrides
-// go here.
 @import 'modules/mobile';     // Mobile styles
 //@import 'print';      // Print styles (Coming soon)
+// body {
+//   margin-right: 50px;
+//   margin-left: 50px;
+// }
+.menu {
+  li {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    :hover {
+      border-bottom: 2px solid grey;
+
+    } 
+  }
+
+}
+header {
+  
+
+  .row { 
+    border: 1px solid grey; 
+    height: 120px;
+  }
+}
+
+main {
+  border: 1px solid grey;
+  
+  text-align: center;
+  min-height: 600px;
+}
+
+footer {
+  text-align: center;
+  .row {
+    border: 1px solid grey;
+    height: 80px;
+  }
+  
+}
+
+.display-box {
+  border: 1px solid lightgrey;
+  // display: inline-block;
+  float: left;
+  width: 21%;
+  min-height: 260px;
+  margin-left: 10px;
+  padding: 1%;
+  img {
+    width: 100%;
+    max-height: 200px;
+  }
+  p {
+
+  }
+}
+
+aside {
+  border: 1px solid grey;
+}
+
+.new-artist {
+  font-size: 20px;
+}
+
+.item-box {
+  border: 1px solid lightgrey;
+  width: 18%;
+  margin: 1%;
+  img {
+    max-width: 100%;
+    max-height: 200px;
+  }
+  float: left;
+}

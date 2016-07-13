@@ -11,8 +11,6 @@ var UserSchema = new mongoose.Schema({
   username: String,
   password: String,
   email:    String,
-  address:  Array,
-  items:     Array
 }, {
   strict: false
 });
