@@ -1,0 +1,35 @@
+<main class="container new-artist">
+  <div class="row">
+    <div class="col-12 ">
+      <h3 class="add-new-link">Add a new item to collection</h3>
+
+      <form method="post" action="/items/new" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Insert name here" size="101" required />
+        <br /><br />
+        <select name="artist" required>
+        <option value=" ">Chose the artist</option>
+          {{#each this.artists}}
+
+          {{!-- <p>{{artist.fullname}}</p> --}}
+            <option value="{{this.fullname}}">{{this.fullname}}</option>
+                  <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
+          {{/each}}
+        </select> <small>{{this.artists.fullname}}</small> 
+
+        <br /><br />
+        <textarea name="about" rows="6" cols="100">Description</textarea>
+        <br /><br />
+        <input type="text" name="location" placeholder="Insert location" size="101" />
+        <br /><br />
+        <input type="text" name="created" placeholder="Insert the date" size="101" />
+        <br /><br />
+        <input type="text" name="subject" placeholder="Subject of the item" size="101" />
+        <br /><br />
+        <input type="text" name="periods" placeholder="Period/periods " size="101" />
+        <br /><br />
+        <input type="file" name="foto"  required image/*/>
+        <br /><br />
+        <button>Add new item</button>
+      </form>
+    </div>
+</main>

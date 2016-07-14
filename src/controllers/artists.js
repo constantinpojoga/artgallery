@@ -16,14 +16,18 @@ var express = require('express'),
 /* GET /artists/new/? listing. */
 Artists.route('/new/?')
 .get(function(req, res, next) {
+  if(req.session.isLoggedIn) {
+    next();
+  } else {
+    res.redirect('/login')
+  }
+}, function(req, res, next) {
     Artist.find(function(err, artists){
       console.log(err)
       if (err) {
         res.send('ERROR: ' + err);
       } else {
-        console.log(artists);
-        res.json(artists)
-        // res.render('new_items', {artists: artists});
+        res.render('new_artist', {artists: artists});
       }
   });
 })
@@ -38,7 +42,7 @@ Artists.route('/new/?')
     foto:     req.file.filename
   }, function (err, artist) {
     if (err) return next(err);
-    res.redirect("/artists", {});
+    res.redirect("/artists");
   });
 });
  // :id/
@@ -51,12 +55,16 @@ Artists.route('/:id')
       res.send(err);
     } else {
         Item.find({artist: artist.fullname}, function(err, items) {
+          // console.log(items)
           if(err) { 
-            
             console.log('could not find Items')
           } else {
             console.log(artist.fullname);
-            res.json(items)
+            // res.json(items)
+            res.render('artist_collection', {
+              artist: artist,
+              items: items
+            })
           }
         })
       }

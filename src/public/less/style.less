@@ -10,81 +10,198 @@
 //@import 'modules/grid';       // Baseline grid
 @import 'modules/flex-grid';  // Flexbox grid
 @import 'modules/type';       // Typography
-@import 'modules/mobile';     // Mobile styles
+
 //@import 'print';      // Print styles (Coming soon)
 // body {
 //   margin-right: 50px;
 //   margin-left: 50px;
 // }
+* {
+  font-size: 20px;
+  color: #A95514;
+  textarea {
+    color: #555;
+  }
+  input {
+    color: #555;
+    border: 1px solid #777;
+  }
+}
+
+li {
+    list-style-type: none;
+}
+
+// 
+
+header {
+  border-bottom: 2px solid orange; 
+  height: 100px;
+}
+
+footer {
+  text-align: center;
+  height: 60px;
+  border-top: 2px solid orange; 
+}
+
 .menu {
   li {
+    padding-top: 10px;
     display: inline;
     float: right;
     padding-right: 10px;
     :hover {
       border-bottom: 2px solid grey;
-
     } 
   }
-
 }
-header {
-  
 
-  .row { 
-    border: 1px solid grey; 
-    height: 120px;
+aside {
+  border-right: 1px solid lightgrey;
+}
+
+.add-new-link {
+  margin-top: 10px;  
+}
+
+.main-background {
+  background-color: lightgrey;
+  background-image: url("http://previews.123rf.com/images/suchota/suchota1503/suchota150300498/37295535-abstract-hand-draw-oil-painting-composition-colorful-background-Stock-Photo.jpg");
+  // background-repeat: no-repeat;
+  background-size: cover;
+}
+.button-large {
+  display: inline-block;
+  padding: 10px 25px 10px 25px;
+  font-size: 25px;
+  background-color: lightgrey;
+  :hover {
+    background-color: red;
   }
 }
+
+
+
+.new-artist, .log-in{
+  margin: 0;
+  width: 100%;
+  background-color: lightgrey;
+  background-image: url("http://coolblackppt.com/wp-content/uploads/2013/08/Pastel-orange-grunge-background-with-yellow-and-pink-highlights.jpg");
+  // background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.artist-preview {
+    border: 1px solid orange;
+    position: relative;
+    right: 40px;
+    top: 25px;
+
+  
+}
+
+.items-about-btn, .items-items-btn {
+  // display: inline-block;
+  float: left;
+  padding: 5px;
+  border-bottom: 2px solid grey;
+}
+
+.artist-about-page {
+  display: none;
+}
+
+.artist-menu {
+  margin-bottom: 5px;
+}
+
+
+
+
+.log-in {
+  h2 {
+    margin-top: 20px;
+  }
+  input {
+    margin: 10px;
+  }
+  button {
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+  }
+}
+
+
 
 main {
-  border: 1px solid grey;
-  
   text-align: center;
-  min-height: 600px;
-}
-
-footer {
-  text-align: center;
-  .row {
-    border: 1px solid grey;
-    height: 80px;
-  }
-  
+  min-height: 650px;
 }
 
 .display-box {
+  // color: #2b2929;
   border: 1px solid lightgrey;
-  // display: inline-block;
   float: left;
   width: 21%;
-  min-height: 260px;
+  height: 260px;
   margin-left: 10px;
   padding: 1%;
   img {
     width: 100%;
     max-height: 200px;
   }
-  p {
-
-  }
 }
 
-aside {
-  border: 1px solid grey;
-}
-
-.new-artist {
-  font-size: 20px;
+.footer-line {
+  padding: 10px;
 }
 
 .item-box {
+  font-size: 12px;
   border: 1px solid lightgrey;
-  width: 18%;
-  margin: 1%;
+  display: inline-block;
+  // width: 18.8%;
+  margin-right: 0.5%;
+  margin-bottom: 0.5%;
+  float: left;
   img {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 160px;
   }
-  float: left;
+  // float: left;
+  height: 240px;
 }
+
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding: 2px 435px 2px 435px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a {
+  color: #555;
+  }
+
+.people-list {
+  a:hover {
+      border-bottom: 2px solid grey;
+    } 
+}
+
+

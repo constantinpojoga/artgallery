@@ -1,16 +1,21 @@
 
-<main>
-  <a href="/items/new">Create new item</a>
- 
-  <ul class="items_list">
-    {{#each items}}
-      <div class="item-box yoxview">
-        <strong>{{this.artist}}</strong>
-        <img src="/img/{{this.foto}}">
-        {{this.title}}
-      </div>
-    {{/each}}
-  </ul>
+<main class="container">
+  <div class="row">
+    <div class="col-12">
+      <h5><a href="/items/new">Add new item </a></h5>
+     
+      <ul class="items_list">
+        {{#each items}}
+          <div class="item-box yoxview">
+            <strong>{{this.artist}}</strong><br />
+            <img src="/img/{{this.foto}}"><br />
+            <small>{{this.title}}</small>
+            {{!-- {{this.id}} --}}
+          </div>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </main>
 
 

@@ -2,7 +2,7 @@
   <div class="row">
     
         <aside class="col-3">
-          <ul class="people_list">
+          <ul class="people-list">
             {{#each artists}}
               <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
             {{/each}}
@@ -11,17 +11,14 @@
 
         <main class="col-9">
           <div class="row-x">
-            <a href="/artists/new">
-              <div>
-               <p>Add new artist</p>
-              </div>
-            </a>
-
+            
+            <h5><a href="/artists/new">Add new artist </a></h5>
+          
             {{#each artists}}
               <a href="/artists/{{this.id}}">
                 <div class="display-box">
                    <img class="artist" src="/img/{{this.foto}}">
-                   <h4>{{this.fullname}}</h4>
+                   {{this.fullname}}
                    {{!-- <p>{{this.about}}</p> --}}
                 </div>
               </a>

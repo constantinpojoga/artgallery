@@ -17,22 +17,27 @@ app.engine('hbs', exphbs({
   layoutsDir: __dirname + '/views/layouts/',
   partialsDir: __dirname + '/views/partials/'
 }));
+
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(session({
-  name:   "sessionclass",
-  resave: false,
-  saveUnitialized: false,
-  secret: 'dfhbidhf3-oewfwfsfe'
-}))
+
 
 // Connect to database
 // -------------------
 require('./config/db');
 // Middleware
 // ----------
+app.use(session({
+  name:   "sessionclass",
+  resave: false,
+  saveUninitialized: false,
+  secret: 'dfhbidhf3-fhjfjvtvg'
+}));
+
+
+
 app.use(express.static(__dirname + '/public')); // Serve static files
 app.use('/login', require('./controllers/login'));
 app.use('/register', require('./controllers/register'));

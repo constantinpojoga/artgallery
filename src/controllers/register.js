@@ -14,35 +14,34 @@ RegisterController.route('/?')
   // Render the register page
   .get(function(req, res, next) {
     res.render('register', {
-      message: "Register"
-      // csrfToken: req.csrf()
+      pageTitle: 'Register for an account | Sign up',
+      message:   req.session.isLoggedIn ? 'You are already logged in' : 'You need to sign up'
     });
-    console.log(req.body);
   })
   // POST /
   // ------
   // Log the user in
   .post(function(req, res, next) {
-    bcrypt.hash(req.body.password, 10, function(err, hash) {
-      // Save user inside here
-      User.create({
-        fullname:  req.body.fullname,
-        username:  req.body.username,
-        password:  hash,
-        email:     req.body.email,
-        adress:    req.body.address,
-        favorites: [],
-        cars: []
-      }, function(err, user) {
-        if (err) {
-          console.log(err);
-          res.render('register', {message: "Could not register" + err});
-        } else {
-          res.render('register', {message: 'Succes'});
-          console.log(user)
-        }
+    if (req.body.password === req.body.password_confirmation) {
+      bcrypt.hash(req.body.password, 10, function(err, hash) {
+        // Save user inside here
+        User.create({
+          fullname:  req.body.fullname,
+          username:  req.body.username,
+          password:  hash
+        }, function(err, user) {
+          if (err) {
+            console.log(err);
+            res.render('register', {message: "Could not register " + err});
+          } else {
+            req.session.isLoggedIn  = true;
+            req.session.userId      = user._id;
+            res.redirect('/');
+            console.log("succesfull autentification")
+          }
+        });
       });
-    });
+    }
   })
 
 module.exports = RegisterController;

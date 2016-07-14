@@ -1,8 +1,21 @@
-<h1>Log in</h1>
-<form method="post" action="/login">
-  <input type="text" name="username" placeholder="Username" />
-  <br />
-  <input type="password" name="password" placeholder="Password" />
-  <br />
-  <button>Log in</button>
-</form>
+<main class="container log-in">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <br />
+      <h2>Sign in</h2>
+      <p>{{message}}</p>
+
+      <form action="/login" method="post">
+        <label class="form-block">
+          <input type="text" name="username" placeholder="username" />
+        </label><br />
+        <label class="form-block">
+          <input type="password" name="password" placeholder="password" />
+        </label><br />
+        <button>Sign in</button>
+      </form>
+
+    </div>
+  </div>
+</main>

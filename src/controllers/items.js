@@ -14,7 +14,17 @@ var express = require('express'),
  // /new 
 Items.route('/new')
   .get(function(req, res, next) {
-    res.render('new_items', {})
+  if(req.session.isLoggedIn) {
+      next();
+    } else {
+      res.redirect('/login')
+    }
+    }, function(req, res, next) {
+      Artist.find(function(err, artists) {
+        if(err) console.log('ERROR adding new artist ' + err);
+        res.render('new_item', {artists: artists})
+      })
+      
   })
 .post(upload.single('foto'), function(req, res, next) {
   console.log(req.body);
@@ -31,7 +41,7 @@ Items.route('/new')
     foto:     req.file.filename
   }, function (err, artist) {
     if (err) return next(err);
-    res.json(req.body);
+    res.redirect('/items');
   });
 });
  // :id/

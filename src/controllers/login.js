@@ -14,7 +14,8 @@ LoginController.route('/?')
   // Render the login page
   .get(function(req, res, next) {
     res.render('login', {
-      message: "Enter your username and password"
+      pageTitle: 'Log in to continue | Sign in',
+      message:   req.session.isLoggedIn ? 'You are already logged in' : 'You need to sign in'
     });
   })
   // POST /
@@ -23,17 +24,24 @@ LoginController.route('/?')
   .post(function(req, res, next) {
     User.findOne({username: req.body.username}, function(error, user) {
       if (error || !user) {
-        res.send('Could not find user');
+         res.render('login', {
+              pageTitle: 'Log in to continue | Sign in',
+              message:   'Could not find the user'
+            });
       } else {
         bcrypt.compare(req.body.password, user.password, function(err, result) {
           if (err) {
             res.send('ERROR: ' + err);
           } else if (result) {
-            res.send('User logged in');
-            console.log(req.body)
+            req.session.isLoggedIn  = true;
+            req.session.userId      = user._id;
+            req.session.user = req.body.username;
+            console.log("succesfull log in")
+            res.redirect('/')
           } else {
             res.render('login', {
-              message: "Wrong username and password"
+              pageTitle: 'Log in to continue | Sign in',
+              message:   'Wrong username or password'
             });
           }
         })

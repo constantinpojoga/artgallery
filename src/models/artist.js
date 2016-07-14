@@ -1,6 +1,5 @@
 // Artist Model
 // ----------
-// Representation of a user as an object
 
 var mongoose = require('mongoose');
 
