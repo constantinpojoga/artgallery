@@ -27,9 +27,6 @@ Items.route('/new')
       
   })
 .post(upload.single('foto'), function(req, res, next) {
-  console.log(req.body);
-  // console.log(req.file);
-  console.log(req.file.filename)
   Item.create({
     title:    req.body.title,
     artist:   req.body.artist,
@@ -37,10 +34,10 @@ Items.route('/new')
     location: req.body.location,
     created:  req.body.created,
     subject:  req.body.subject,
-    periods:  req.body.subject,
+    periods:  req.body.periods,
     foto:     req.file.filename
   }, function (err, artist) {
-    if (err) return next(err);
+    if (err) console.log(err);
     res.redirect('/items');
   });
 });
@@ -49,15 +46,15 @@ Items.route('/new')
 Items.route('/:id')
   .get(function(req, res, next) {
     Item.findById(req.params.id, function (err, item) {
-      if (err) return next(err);
-      res.json(item);
+      if (err) console.log(err);
+      res.render('item-details', item);
     });
   })
   /* PUT/items/:id */
   .put(function(req, res, next) {
     // console.log(req.body);
     Item.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
-      if (err) return next(err);
+      if (err) console.log(err);
       res.json(item);
     });
   })
@@ -65,7 +62,7 @@ Items.route('/:id')
   .patch(function(req, res, next) {
     // console.log(req.body);
     Item.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
-      if (err) return next(err);
+      if (err) console.log(err);
       res.json(item);
     });
   })
@@ -73,7 +70,7 @@ Items.route('/:id')
   .delete(function(req, res, next) {
     // console.log(req.body);
     Item.findByIdAndRemove(req.params.id, req.body, function (err, item) {
-      if (err) return next(err);
+      if (err) console.log(err);
       res.json(item);
     });
   });

@@ -59,17 +59,15 @@ Artists.route('/:id')
           if(err) { 
             console.log('could not find Items')
           } else {
-            console.log(artist.fullname);
+            // console.log(artist.fullname);
             // res.json(items)
-            res.render('artist_collection', {
+            res.render('artist-collection', {
               artist: artist,
               items: items
             })
           }
         })
       }
-   
-    // $("a.grouped_elements").fancybox();
   });
 })
 /* PUT /artists/:id */
