@@ -9,6 +9,8 @@ var express     = require('express'),
     bodyParser  = require('body-parser'),
     session     = require('express-session');
 
+var connectionString = process.env.NODE_ENV === 'production' ? 'mongodb://<admin>:<abc123>@ds011755.mlab.com:11755/artgallery' : 'mongodb://localhost:3000/'
+
 // Configuration
 // -------------
 app.engine('hbs', exphbs({
@@ -49,6 +51,6 @@ app.use('/?', require('./controllers/home'));
 
 // Start the server
 // ----------------
-var server = app.listen(3000, function() {
+var server = app.listen(process.env.PORT || 3000, function() {
   console.log('App is running at http://localhost:' + server.address().port);
 });
