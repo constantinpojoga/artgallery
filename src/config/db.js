@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 var connectionString = 'mongodb://localhost/users';
 
+var connectionString = process.env.NODE_ENV === 'production' ? 'mongodb://<admin>:<abc123>@ds011755.mlab.com:11755/artgallery' : 'mongodb://localhost:3000/';
+
 mongoose.connect(connectionString);
 
 mongoose.connection.on('connected', function() {
