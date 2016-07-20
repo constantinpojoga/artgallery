@@ -9,8 +9,6 @@ var express     = require('express'),
     bodyParser  = require('body-parser'),
     session     = require('express-session');
 
-var connectionString = process.env.NODE_ENV === 'production' ? 'mongodb://<admin>:<abc123>@ds011755.mlab.com:11755/artgallery' : 'mongodb://localhost:3000/'
-
 // Configuration
 // -------------
 app.engine('hbs', exphbs({

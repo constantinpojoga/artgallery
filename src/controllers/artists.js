@@ -11,8 +11,6 @@ var express = require('express'),
   multer  = require('multer'),
   upload  = multer({dest: __dirname + '/../public/img/'});
 
-
-
 /* GET /artists/new/? listing. */
 Artists.route('/new/?')
 .get(function(req, res, next) {
