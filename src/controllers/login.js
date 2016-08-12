@@ -47,6 +47,6 @@ LoginController.route('/?')
         })
       }
     })
-  })
+  });
 
 module.exports = LoginController;

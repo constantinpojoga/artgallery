@@ -1,4 +1,4 @@
-RegisterController
+// RegisterController
 // ==============
 // Controller for the register.
 

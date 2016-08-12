@@ -5,6 +5,7 @@
 var express         = require('express'),
     HomeController  = express.Router(),
     Artist            = require(__dirname + '/../models/artist'),
+    User            = require(__dirname + '/../models/user'),
     bcrypt          = require('bcrypt');
     // exphbs          = require('express-handlebars');
 
