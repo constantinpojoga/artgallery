@@ -4,7 +4,7 @@
       <aside class="col-3" >
         <div class="artist-foto">
           <h3>{{artist.fullname}}</h3>
-          <img class="artist-preview" src="/img/{{artist.foto}}"  alt="Inline" />
+          <img class="artist-preview" src="/img/{{artist.foto}}" />
           
             
 
@@ -31,7 +31,7 @@
           {{#each items}}
             <a href="/items/{{this.id}}/">
             <div class="image-preview">
-              <div class="image-preview" style="background-image: url('/img/{{this.foto}}')">
+              <div {{!-- class="image-preview" --}} style="background-image: url('/img/{{this.foto}}')">
                 <p><strong>{{this.title}}</strong></p><br />
               </div> 
             </div>

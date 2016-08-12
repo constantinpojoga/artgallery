@@ -39,9 +39,6 @@ app.use(session({
 
 
 app.use(express.static(__dirname + '/public')); // Serve static files
-app.use('/login', require('./controllers/login'));
-app.use('/register', require('./controllers/register'));
-app.use('/catalog', require('./controllers/catalog'));
 app.use('/artists', require('./controllers/artists'));
 app.use('/items', require('./controllers/items'));
 app.use('/?', require('./controllers/home'));
