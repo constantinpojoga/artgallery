@@ -1,21 +1,18 @@
-<main class="container log-in">
-  <div class="row">
-    <div class="col-12">
-      <br />
-      <br />
-      <h2>Sign in</h2>
-      <p>{{message}}</p>
 
-      <form action="/login" method="post">
-        <label class="form-block">
-          <input type="text" name="username" placeholder="username" />
-        </label><br />
-        <label class="form-block">
-          <input type="password" name="password" placeholder="password" />
-        </label><br />
-        <button>Sign in</button>
-      </form>
-
+<section class="login-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-push-4 col-sm-4">
+        <h1 class="text-center">Sign in</h1>
+        <p class="red">{{message}}</p>
+        <form class="form-horizontal" action="/login" method="post">
+          <label class="control-label" for="loginInputUsername">Username:</label>
+          <input id="loginInputUsername" class="form-control" type="text" name="username" placeholder="Enter username" />   
+          <label class="control-label" for="loginInputPassword">Password:</label>
+          <input id="loginInputPassword" class="form-control" type="password" name="password" placeholder="Your password" /> 
+          <button class="btn btn-default">Sign in</button>
+        </form>
+      </div>
     </div>
   </div>
-</main>
+</section>

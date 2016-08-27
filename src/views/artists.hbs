@@ -1,40 +1,46 @@
-<div class="container">
-  <div class="row">
-    
-        <aside class="col-3">
+<section>
+  <div class="container">
+    <div class="row">
+      <aside>
+        <div class="col-sm-3">
           <ul class="people_list">
             {{#each artists}}
               <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
             {{/each}}
           </ul>
-        </aside>
+        </div>
+        <p class="text-center"><a class="btn btn-default" type="button" href="/artists/new">Add new artist </a></p>
 
-        <main class="col-9">
-          <div class="row-x">
-            
-               <p><a href="/artists/new">Add new artist </a></p>
-           
+      </aside> 
 
-            {{#each artists}}
-              <a href="/artists/{{this.id}}">
-                <div class="display-box">
-                   <img class="artist" src="/img/{{this.foto}}">
-                   <h4>{{this.fullname}}</h4>
-                   {{!-- <p>{{this.about}}</p> --}}
-                </div>
-              </a>
-            {{/each}}
-          </div> 
-          {{!--  <ul class="people_list">
-            {{#each artists}}
-              <li>{{this}}</li>
-            {{/each}}
-            </ul> --}}
-          {{!-- <img src="/img/08c4b4858ee2fa0bf13cb8bad435d056" /> --}}
-        </main>
+      <main class="col-sm-9">
+        <div class="row">
+          
+         
+
+          {{#each artists}}
+
+            <a href="/artists/{{this.id}}">
+              <div class="display-box">
+                 <img class="artist img-responsive" src="/img/{{this.foto}}">
+                 {{!-- <span><h4 class="text-center"> {{this.fullname}}</h4></span> --}}
+                 <h4 class="text-center"> {{this.fullname}}</h4>
+              </div>
+            </a>
+          {{/each}}
+        </div> 
+        {{!--  <ul class="people_list">
+          {{#each artists}}
+            <li>{{this}}</li>
+          {{/each}}
+          </ul> --}}
+        {{!-- <img src="/img/08c4b4858ee2fa0bf13cb8bad435d056" /> --}}
+      </main>
     </div>
   </div>
-</div>
+
+</section>
+
 
 
 

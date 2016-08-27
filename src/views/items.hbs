@@ -1,25 +1,23 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h5 class="text-center"><a class="btn btn-default" type="button" href="/items/new">Add new item </a></h5>
+       
+        <ul class="items_list">
+          {{#each items}}
+            <a href="/items/{{this.id}}">
+              <div class="image-preview">
+                <div style="background-image: url('/img/{{this.foto}}')">
+                  <p><strong>{{this.title}}</strong></p><br />
+                </div> 
+              </div>
+            </a>
+          {{/each}}
 
-<main class="container">
-  <div class="row">
-    <div class="col-12">
-      <h5><a href="/items/new">Add new item </a></h5>
-     
-      <ul class="items_list">
-        {{#each items}}
-          <a href="/items/{{this.id}}/">
-            <div class="image-preview">
-              <div style="background-image: url('/img/{{this.foto}}')">
-                <p><strong>{{this.title}}</strong></p><br />
-              </div> 
-            </div>
-          </a>
-        {{/each}}
-
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
-</main>
-
-
-
-
+</section>
+  

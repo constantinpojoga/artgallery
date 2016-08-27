@@ -1,27 +1,21 @@
-<main class="container log-in">
-  <div class="row">
-    <div class="col-12">
-       <br />
-      <br />
-      <h2>Sign up</h2>
-      <p class="red">{{message}}</p>
 
-      <form action="/register" method="post">
-        <label class="form-block">
-          <input type="text" name="username" placeholder="Pick a username" />
-        </label><br />
-        <label class="form-block">
-          <input type="password" name="password" placeholder="Choose a password" />
-        </label><br />
-        <label class="form-block">
-          <input type="password" name="password_confirmation" placeholder="Confirm your password" />
-        </label><br />
-        <button>Sign up</button>
-      </form>
-
+<section class="login-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-push-4 col-sm-4">
+        <h1 class="text-center">Sign up</h1>
+        <p class="red">{{message}}</p>
+        <form class="form-horizontal" action="/register" method="post">
+          <label class="control-label" for="registerInputUsername">Username:</label>
+          <input id="registerInputUsername" class="form-control" type="text" name="username" placeholder="Pick a username" />
+          <label class="control-label" for="registerInputPassword">Password:</label>
+          <input id="registerInputPassword" class="form-control" type="password" name="password" placeholder="Choose a password" />
+          <label class="control-label" for="registerRepeatPassword">Repeat password:</label>
+          <input  id="registerRepeatPassword" class="form-control" type="password" name="password_confirmation" placeholder="Confirm your password" />  
+          <button class="btn btn-default">Sign up</button>
+        </form>
+      </div>
     </div>
   </div>
-</main>
-
-
+</section>
 

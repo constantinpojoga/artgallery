@@ -93,7 +93,7 @@ HomeController.route('/?')
       if (err) {
          console.log(err)
         res.send('ERROR: ' + err);
-      } else res.render('home', {});
+      } else res.render('home', {pageTitle: 'Artgallery'});
     });
   });
 
