@@ -22,7 +22,9 @@ Items.route('/new')
     }, function(req, res, next) {
       Artist.find(function(err, artists) {
         if(err) console.log('ERROR adding new artist ' + err);
-        res.render('new_item', {artists: artists})
+        res.render('new_item', {
+          pageTitle: 'Artgallery - Add new Item',
+          artists: artists})
       })
       
   })
@@ -83,7 +85,9 @@ Items.route('/?')
       console.log(err)
       if (err) {
         res.send('ERROR: ' + err);
-      } else res.render('items', {items: items});
+      } else res.render('items', {
+        pageTitle: 'Artgallery - All Items',
+        items: items});
       // res.json(users)
     });
   })
@@ -96,5 +100,4 @@ Items.route('/?')
     });
   });
  
-
 module.exports = Items;

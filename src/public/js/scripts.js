@@ -1,6 +1,3 @@
- $('#artist-about-btn').on('click', function() {
-    $('.artist-about-page').toggle();
-  })
 
 var menu       = ['home', 'artists', 'items', 'login', 'register'],
     splitedUrl = document.URL.split('/'),

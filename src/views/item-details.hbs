@@ -1,23 +1,28 @@
-<div class="container item-details">
-  <div class="row">
-      <aside class="col-3" >
-      <br />
-        <h3>{{this.title}}</h3>
-        <p><strong>Artist: </strong>{{this.artist}}</p>
-        <p><strong>Location: </strong>{{this.location}}</p>
-        <p><strong>Created: </strong>{{this.created}}</p>
-        <p><strong>Subject: </strong>{{this.subject}}</p>
-        <p><strong>Periods: </strong>{{this.periods}}</p>
-        <p><strong>About: </strong>{{this.about}}</p>
-      </aside>
+<section class="gallery-section">
+  <div class="container item-details">
+    <div class="row">
+        <div class="col-md-3 col-sm-4" >
+        <br />
+          <h3>{{this.title}}</h3>
+          <p><strong>Artist: </strong>{{this.artist}}</p>
+          <p><strong>Location: </strong>{{this.location}}</p>
+          <p><strong>Created: </strong>{{this.created}}</p>
+          <p><strong>Subject: </strong>{{this.subject}}</p>
+          <p><strong>Periods: </strong>{{this.periods}}</p>
+          <p><strong>About: </strong>{{this.about}}</p>
+        </div>
 
-      <main class="col-9">
-         <img class="item-details" src="/img/{{this.foto}}">
-        
-      </main>
+        <div class="col-md-9 col-sm-8">
+          <img class="item-preview-big" src="/img/{{this.foto}}">
+          
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+</section>
+
 
 
 {{!--  

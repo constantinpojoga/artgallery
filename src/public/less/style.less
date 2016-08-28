@@ -2,41 +2,24 @@
  * Main Stylesheet
  */
 
-// ::selection { background: @orange; color: @white; }
-// ::moz-selection { background: @orange; color: @white; }
-
-// @import 'modules/colors';     // Global color scheme
-// @import 'modules/mixins';     // Mixins
-// 
-// @import 'modules/grid';       // Baseline grid
-// @import 'modules/flex-grid';  // Flexbox grid
-// @import 'modules/mobile';     // Mobile
-// @import 'modules/type';       // Typography
-
-
 * {
   font-family: 'Monda', sans-serif;
-
+  font-size: 16px;
 }
 
 section {
   min-height: calc(~"100vh" - 100px);
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 .homepage {
   background-image: url("/img/bg/main-bg.jpg");
 }
 
-// https://images4.alphacoders.com/161/16178.jpg
-
 .login-page {
-  // text-align: center;
-  background-image: url("http://p1.pichost.me/i/56/1803303.jpg");
+  background-image: url("/img/bg/login.jpg");
   button {
-
     margin-top: 20px;
   }
   h1 {
@@ -44,35 +27,27 @@ section {
   }
 }
 
-.logo {
-  width: 200px;
-  height: 45px;
-  margin-top: -12px;
-}
-
 .navbar {
+  margin-bottom: 0;
+  z-index: 100;
   ul {
     float: right;
     font-weight: bold;
   }
 }
 
-header {
-  // border: 1px solid green;
-}
 
 footer {
-  // border: 1px solid green;  
+  background: #eee;
   text-align: center;
   height: 50px;
+  p {
+    padding-top: 10px;
+  }
 }
 
 li {
   list-style: none;
-}
-
-.navbar {
-  // border: 1px solid red;
 }
 
 header {
@@ -85,9 +60,17 @@ h1, h2, h3, h4 {
 
 img {
   background-image:url('/img/no-foto.jpg');
-  width: 100%;
-  height: 100%;
+  min-height: 170px;
+  max-width: 100%;
+  max-height: 100%;
   background-size: cover;
+}
+
+.navbar-brand {
+  background: url('/img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
 }
 
 aside {
@@ -108,6 +91,12 @@ aside {
   }
 }
 
+.art-section {
+  background: url('https://images4.alphacoders.com/161/16178.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .red {
   color: red;
   font-weight: bold;
@@ -120,40 +109,32 @@ aside {
     top: 25px;
 }
 
-#items-about-btn, #items-items-btn {
-  // display: inline-block;
-  float: left;
-  padding: 5px;
+.artists-li {
+  border: green;
 }
 
-.artist-about-page {
-  display: none;
-}
-
-.artist-menu {
-  margin-bottom: 5px;
-}
-
-.display-box {
+.display-artist {
+  background: rgba(230,240,240,0.7);
   border: 1px solid lightgrey;
-  float: left;
-  width: 23%;
-  min-width: 140px;
-  height: 250px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 1%;
+  min-height: 200px;
+  margin-top: 20px;
+  text-align: center;
+  div {
+    height: 175px;
+  }
   img {
-    // width: 100%;
-    max-height: 200px;
+    width: 100%;
+    max-height: 175px;
   }
   &:hover {
     font-size: 22px;
+    font-weight: bold;
+    background: rgba(230,240,240,1);
   }
-}
-
-.footer-line {
-  padding: 10px;
+  p {
+    position: absolute;
+    // bottom: -10px;
+  }
 }
 
 .item-box {
@@ -172,50 +153,44 @@ aside {
   }
 }
 
-select {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px;
-    border: 1px solid #AAA;
-    border-radius: 2px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    color: #555;
-    font-size: inherit;
-    margin: 0;
-    overflow: hidden;
-    padding: 2px 435px 2px 435px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-a {
-  color: #555;
+section.gallery-section {
+  background: url('https://images4.alphacoders.com/161/16178.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  img {
+    margin: 30px auto;
   }
-
-.people-list {
-  a:hover {
-      border-bottom: 2px solid grey;
-    } 
 }
 
-.artist-about-page {
-  display: block;
-  text-align: justify;
+.item-preview-big {
+  max-width: 100%;
+  max-height: calc(~"100vh" - 160px);
+  margin: 0 auto;
 }
 
-div.image-preview {
-    height: 220px;
-    width: 220px;
-    overflow: hidden;
-    position: relative;
-    float: left;
-    margin: 0 20px 20px 0;  
-    border: 1px solid orange;
+.artists-li {
+  margin-left: -40px;
+  a {
+    text-decoration: none;
+    font-size: 20px;
+  }
+  li {
+    font-size: 22px;
+    font-weight: bold;
+
+  }
+}
+
+.image-preview {
+  p {
+    font-style: italic;
+    color:white;
+    text-shadow: 1px 1px 1px black;
+  }
+  min-height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden; 
+  border: 1px solid #333;
   &:hover > div {
     -moz-transform: scale(1.1,1.1);
     -webkit-transform: scale(1.1,1.1);
@@ -225,19 +200,16 @@ div.image-preview {
     }  
   }
   div {
-    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 200px;
     -moz-transition: all .5s;
     -webkit-transition: all .5s;
     transition: all .5s;
     -moz-transform: scale(1,1);
     -webkit-transform: scale(1,1);
     transform: scale(1,1);
-    background: #FFE6C5;
-    background-image: url('https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png');
-    -moz-background-size: contain;
-    -webkit-background-size: contain;
+    text-align: center;
+    background: rgba(0, 0, 10, 0.3);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -245,30 +217,7 @@ div.image-preview {
   }
 }
 
-.item-details {
-  h3 {
-   text-align: center; 
-   color: #54361E;
-   margin: 10px 10px 20px 10px;
-  }
-  p {
-    margin: 10px;
-  }
-  
-  img {
-    margin: 20px 10px;
-    max-width: 100%;
-    max-height: 625px;
-  }
-}
 
-.artist-foto {
-  margin: 30px 00px 30px 30px;
-  img {
-    min-height: 250px;
-    width: 100%;
-  }
-}
 
 
 

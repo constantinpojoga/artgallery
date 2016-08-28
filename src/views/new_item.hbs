@@ -1,36 +1,81 @@
 <section  class="login-page">
  <div class="container new-artist">
     <div class="row">
-      <div class="col-12 ">
-        <h3 class="add-new-link">Add a new item to collection</h3>
+      <div class="col-md-push-2 col-md-8 col-sm-push-1 col-sm-10">
+        <h2 class="text-center">Add a new item to collection</h2>
+        <form class="form-horizontal" method="post" action="/items/new" enctype="multipart/form-data">
+          
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemName">Name:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemName" type="text" name="title" placeholder="Insert name here" required />
+            </div>
+          </div>
 
-        <form method="post" action="/items/new" enctype="multipart/form-data">
-          <input type="text" name="title" placeholder="Insert name here" size="101" required />
-          <br /><br />
-          <select name="artist" required>
-          <option value=" ">Chose the artist</option>
-            {{#each this.artists}}
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemArtist">Artist:</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="newItemArtist" name="artist" required>
+                <option value=" ">Chose the artist</option>
+                {{#each this.artists}}
+                  <option value="{{this.fullname}}">{{this.fullname}}</option>
+                  <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
+                {{/each}}
+              </select> <small>{{this.artists.fullname}}</small> 
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemDescription">Description:</label>
+            <div class="col-sm-10">
+             <textarea class="form-control" id="newItemDescription" name="about" rows="3" ></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemLocation">Location:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemLocation" type="text" name="location" placeholder="Insert location" />
+            </div>
+          </div>
 
-            {{!-- <p>{{artist.fullname}}</p> --}}
-              <option value="{{this.fullname}}">{{this.fullname}}</option>
-                    <li><a href="/artists/{{this.id}}">{{this.fullname}}</a></li>
-            {{/each}}
-          </select> <small>{{this.artists.fullname}}</small> 
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemDate">Creation date:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemDate" type="text" name="created" placeholder="Insert the date" />
 
-          <br /><br />
-          <textarea name="about" rows="6" cols="100">Description</textarea>
-          <br /><br />
-          <input type="text" name="location" placeholder="Insert location" size="101" />
-          <br /><br />
-          <input type="text" name="created" placeholder="Insert the date" size="101" />
-          <br /><br />
-          <input type="text" name="subject" placeholder="Subject of the item" size="101" />
-          <br /><br />
-          <input type="text" name="periods" placeholder="Period/periods " size="101" />
-          <br /><br />
-          <input type="file" name="foto"  required image/*/>
-          <br /><br />
-          <button>Add new item</button>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemSubject">Subject:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemSubject" type="text" name="subject" placeholder="Subject of the item" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemPeriods">Periods:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemPeriods" type="text" name="periods" placeholder="Period/periods" />
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="newItemImg">Image path:</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="newItemImg" type="file" name="foto"  required image/*/>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-push-2 col-sm-10">
+              <button class="btn btn-default">Add new item</button>
+            </div>
+          </div>
+          
+          
         </form>
       </div>
   </div>

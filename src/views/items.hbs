@@ -1,22 +1,21 @@
-<section>
+<section class="gallery-section">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      {{!-- <div class="col-sm-12"> --}}
         <h5 class="text-center"><a class="btn btn-default" type="button" href="/items/new">Add new item </a></h5>
        
-        <ul class="items_list">
-          {{#each items}}
-            <a href="/items/{{this.id}}">
-              <div class="image-preview">
-                <div style="background-image: url('/img/{{this.foto}}')">
-                  <p><strong>{{this.title}}</strong></p><br />
-                </div> 
-              </div>
-            </a>
-          {{/each}}
+      {{#each items}}
+        <div class="col-xs-6 col-md-3 col-sm-4">
+          <a href="/items/{{this.id}}">
+            <div class="image-preview ">
+              <div style="background-image: url('/img/{{this.foto}}')">
+                <p><strong>{{this.title}}</strong></p><br />
+              </div> 
+            </div>
+          </a>
+        </div>
+      {{/each}}
 
-        </ul>
-      </div>
     </div>
   </div>
 </section>

@@ -1,50 +1,43 @@
-
-<div class="container">
-  <div class="row">
-      <aside class="col-3" >
+<section class="art-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3" >
         <div class="artist-foto">
           <h3>{{artist.fullname}}</h3>
-          <img class="artist-preview" src="/img/{{artist.foto}}" />
-          
-            
-
+          <img class="img-responsive" src="/img/{{artist.foto}}" />
         </div>
-         <br>
-          <br>
-          <a href="/items/new">Add new paintings</a>
-          
-      </aside>
-
-      <main class="col-9">
+        <br />
+          <a class="btn btn-default text-center" type="button" href="/items/new">Add new paintings</a>
+      </div>
+      <div class="col-sm-9">
           {{!-- <div class="artist-about-page">
             <p>{{artist.about}}</p>
           </div>  --}}
+        {{!-- <p ><strong>About the artist:</strong></p> --}}
+        <br /><p>{{artist.about}}</p><br />
+        <div class="row">
         
-        <p><strong>About the artist:</strong></p>
-
-     
-
-        <div class="row-x ">
-          <div class="artist-about-page">
-            <p>{{artist.about}}</p><br />
-          </div>
+        
+          
           {{#each items}}
+          <div class="col-xs-6 col-md-4">
             <a href="/items/{{this.id}}/">
-            <div class="image-preview">
-              <div {{!-- class="image-preview" --}} style="background-image: url('/img/{{this.foto}}')">
-                <p><strong>{{this.title}}</strong></p><br />
-              </div> 
-            </div>
-          </a>
+              <div class="image-preview">
+                <div {{!-- class="image-preview" --}} style="background-image: url('/img/{{this.foto}}')">
+                  <p><strong>{{this.title}}</strong></p><br />
+                </div> 
+              </div>
+            </a>
+          </div>
+              
           {{/each}}
-        </div> 
-
-        
-      </main>
+        </div>    
+      </div> {{!-- col-sm-9 --}}
+    
     </div>
   </div>
-</div>
-   
+</section>
+  
 
 
 
